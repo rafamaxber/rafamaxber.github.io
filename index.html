@@ -1,1 +1,138 @@
-Hy
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafael Bernardo - Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@300;500&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <aside class="side-bar">
+      <div class="side-bar-container">
+        <div class="thumb">
+          <img src="./images/Rafael_Bernardo.jpg" alt="Rafael Bernardo">
+        </div>
+        <div class="resume">
+          <h1 class="name high-text">
+            Rafael Bernardo
+          </h1>
+          <h2 class="job-role">
+            Web Developer
+          </h2>
+        </div>
+        <nav class="nav">
+          <ul class="navigation">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <main class="main">
+      <section class="presentation" id="home">
+        <h3 class="presentation-job-role high-text">
+          Bem vindo! me chamo <b>Rafael Bernardo</b> e sou <b>Web
+            Developer</b>
+        </h3>
+        <div class="bg1">
+          <img src="./images/undraw_Mobile_application_mr4r.svg" />
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <h4 class="high-text section-title">Quem sou?</h4>
+        <p class="section-text">
+          Sou o pai do Raul e Software Engineer Senior no Mercado livre nas horas vagas, atualmente morando em São Paulo, Brasil. 
+          Tenho mais de 10 anos de experiencia na área de desenvolvimento de software, minha especialidade é no frontend, mas tenho
+          total conhecimento em todas áreas para a criação de um web site, web app, mobile app e web api.
+        </p>
+
+        <div class="container-skills">
+          <div class="container-skills-box">
+            <i data-feather="globe"></i>
+            <h5>Web Design</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="layout"></i>
+            <h5>Graphic Design</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="cloud"></i>
+            <h5>Software</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="smartphone"></i>
+            <h5>Aplicativo Mobile</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="phone"></i>
+            <h5>Consulting</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="zap-off"></i>
+            <h5>Manutenção</h5>
+          </div>
+        </div>
+      </section>
+      
+      <section class="portfolio" id="portfolio">
+        <h4 class="high-text section-title">Portfolio?</h4>
+        <p class="section-text">
+          Aqui você pode ver alguns dos meus trabalhos, realizados como freelancer, ou como parte de um projeto.
+        </p>
+
+        <div class="container-skills">
+          <div class="container-skills-box">
+            <i data-feather="globe"></i>
+            <h5>Web Design</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="layout"></i>
+            <h5>Graphic Design</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="cloud"></i>
+            <h5>Software</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="smartphone"></i>
+            <h5>Aplicativo Mobile</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="phone"></i>
+            <h5>Consulting</h5>
+          </div>
+          <div class="container-skills-box">
+            <i data-feather="zap-off"></i>
+            <h5>Manutenção</h5>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" defer></script>
+  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/js/spotlight.min.js" defer></script>
+
+  <script>
+    window.onload = function () {
+      window.feather && feather.replace()
+    }
+  </script>
+</body>
+
+</html>
