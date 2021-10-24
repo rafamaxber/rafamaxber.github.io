@@ -208,11 +208,11 @@
     </main>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" async defer></script>
+  <script onload="initFeather()" src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" async defer></script>
   <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js" async defer></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script>
-    window.onload = function () {
+    function initFeather() {
       window.feather && feather.replace()
     }
 
