@@ -35,7 +35,14 @@ img {
   z-index: 1;
   transition: all ease-in .5s;
 }
+.menu__active .icon__menu,
+.icon__close_menu {
+  display: none;
+}
 
+.menu__active .icon__close_menu {
+  display: block;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -45,6 +52,10 @@ img {
 
 .icon__menu {
   transition: all ease-in .5s;
+}
+
+.icon__contact {
+  color: var(--text-color);
 }
 
 .presentation {
@@ -140,6 +151,20 @@ img {
   text-transform: uppercase;
 }
 
+.navigation li span {
+  display: block;
+  padding: 1rem;
+}
+
+.navigation li a:hover {
+  color: var(--highlight-color);
+  font-weight: 400;
+}
+
+.navigation li a:active {
+  transform: scale(.9);
+}
+
 .presentation-job-role {
   font-size: 1.7rem;
   line-height: 2.5rem;
@@ -213,8 +238,8 @@ img {
 
 .container-skills-box {
   background-color: var(--main-color-light);
-  width: 8.5rem;
-  height: 8.5rem;
+  width: 10rem;
+  height: 10rem;
   border-bottom: 3px solid #41fc95;
   margin: .5rem;
   padding: .5rem;
@@ -249,13 +274,14 @@ img {
 }
 
 .history {
-  width: 200px;
+  width: 10rem;
+  height: 10rem;
   transition: all ease .3s;
-  height: 200px;
   overflow: hidden;
   border-radius: 50%;
   border: 4px solid #41fc95;
   background-color: #f9f9f9;
+  margin: .5rem;
 }
 
 .history img {
@@ -264,34 +290,6 @@ img {
   height: 100%;
   position: relative;
   margin: auto;
-}
-
-@media (min-width: 768px) {
-  .section__presentation .bg1 {
-    max-width: 610px;
-  }
-
-  .section__presentation {
-    flex-flow: initial;
-    height: auto;
-    padding: 3em 0;
-  }
-
-  .presentation-job-role {
-    padding-top: 0;
-    font-size: 2.8rem;
-    text-align: left;
-    max-width: 480px;
-    line-height: 4rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .form_img {
-    display: block;
-  }
 }
 
 .history:hover img {
@@ -353,8 +351,12 @@ img {
 
 .form_img {
   width: 80%;
-
+  text-align: right;
   display: none;
+}
+
+.form_img img {
+  max-width: 90%;
 }
 
 .form {
@@ -370,4 +372,32 @@ img {
   font-weight: 800;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .section__presentation .bg1 {
+    max-width: 610px;
+  }
+
+  .section__presentation {
+    flex-flow: initial;
+    height: auto;
+    padding: 3em 0;
+  }
+
+  .presentation-job-role {
+    padding-top: 0;
+    font-size: 2.8rem;
+    text-align: left;
+    max-width: 480px;
+    line-height: 4rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .form_img {
+    display: block;
+  }
 }
