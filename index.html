@@ -15,10 +15,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
 
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style-desktop.css">
 </head>
 
 <body>
   <div class="container">
+    <header class="header__container">
+      <div class="header">
+        <div class="header__icon icon__menu">
+          <i data-feather="menu"></i>
+        </div>
+
+        <div class="presentation">
+          <h1>Rafael Bernardo</h1>
+          <h2>Desenvolvedor Web</h2>
+        </div>
+
+        <a href="#contact" class="header__icon icon__contact">
+          <i data-feather="heart"></i>
+        </a>
+      </div>
+    </header>
+    <!-- <aside class="side-bar menu__active"> -->
     <aside class="side-bar">
       <div class="side-bar-container">
         <div class="thumb">
@@ -43,7 +61,7 @@
       </div>
     </aside>
     <main class="main">
-      <section class="presentation" id="home">
+      <section class="section__presentation" id="home">
         <h3 class="presentation-job-role high-text">
           Bem vindo! me chamo <b>Rafael Bernardo</b> e sou <b>Web
             Developer</b>
@@ -56,7 +74,7 @@
       <section class="about" id="about">
         <h4 class="high-text section-title">Quem sou?</h4>
         <p class="section-text">
-          Sou o pai do Raul e Software Engineer Senior no Mercado livre nas horas vagas, atualmente morando em São Paulo, Brasil. 
+          Sou o pai do Raul e Software Engineer Senior no Mercado livre nas horas vagas, atualmente morando em São Paulo, Brasil.
           Tenho mais de 10 anos de experiencia na área de desenvolvimento de software, minha especialidade é no frontend, mas tenho
           total conhecimento em todas áreas para a criação de um web site, web app, mobile app e web api.
         </p>
@@ -88,21 +106,120 @@
           </div>
         </div>
       </section>
-      
+
       <section class="portfolio" id="portfolio">
-        <h4 class="high-text section-title">Construindo...</h4>
-        <img src="./images/undraw_clean_up_ucm0.svg" alt="Web Development" class="portfolio-img">
+        <!-- <h4 class="high-text section-title">Construindo...</h4> -->
+        <!-- <img src="./images/undraw_clean_up_ucm0.svg" alt="Web Development" class="portfolio-img"> -->
+        <h4 class="high-text section-title">Portfolio</h4>
+
+        <div class="container__portfolio">
+          <a class="history" href="./images/portfolio/srs/00_srasesrs_home.jpg">
+            <img src="./images/portfolio/srs/00_srasesrs_home.jpg">
+          </a>
+
+          <a class="history" href="./images/portfolio/bons/_home_v1.jpg">
+            <img src="./images/portfolio/bons/_home_v1.jpg">
+          </a>
+
+          <a class="history" href="./images/portfolio/escond/es_banner.jpg">
+            <img src="./images/portfolio/escond/es_banner.jpg">
+          </a>
+
+          <a class="history" href="./images/portfolio/aw3d/home.png">
+            <img src="./images/portfolio/aw3d/home.jpg">
+          </a>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h4 class="high-text section-title">Contato</h4>
+
+        <div class="container__form">
+          <form class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
+            <div class="fieldset">
+              <label for="entry.864902802">Nome:</label>
+              <input autocomplete="name" type="text" required name="entry.864902802" id="entry.864902802">
+            </div>
+
+            <div class="fieldset">
+              <label for="entry.436600745">Email:</label>
+              <input autocomplete="email" type="email" required name="entry.436600745" id="entry.436600745">
+            </div>
+
+            <div class="fieldset">
+              <label for="entry.1588077306">Serviço:</label>
+              <select name="entry.1588077306" id="entry.1588077306">
+                <option value="Criação de site institucional">Criação de site institucional</option>
+                <option value="Aplicativos">Aplicativos</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Criação de logo">Criação de logo</option>
+                <option value="Consultoria">Consultoria</option>
+              </select>
+            </div>
+
+            <div class="fieldset">
+              <label for="entry.1542882848">Descrição:</label>
+              <textarea name="entry.1542882848" id="entry.1542882848" cols="30" rows="10"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Enviar</button>
+
+            <input type="hidden" name="usp" id="usp" value="pp_url">
+          </form>
+
+          <div class="form_img">
+            <img src="./images/undraw_My_notifications_re_ehmk.svg" alt="Enviar mensagem" />
+          </div>
+        </div>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
       </section>
     </main>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" defer></script>
-  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/js/spotlight.min.js" defer></script>
+  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js" defer></script>
 
   <script>
     window.onload = function () {
       window.feather && feather.replace()
     }
+
+    document.querySelector('.icon__menu').addEventListener('click', () => {
+      document.querySelector('.side-bar').classList.toggle('menu__active')
+    })
+
+
+    document.querySelectorAll('.navigation a').forEach((el, key) => {
+      el.addEventListener('click', () => {
+      const hasMenuActive = document.querySelector('.side-bar').classList.contains('menu__active')
+      if (hasMenuActive) {
+        document.querySelector('.side-bar').classList.toggle('menu__active')
+      }
+    })
+    })
+
+    function addTransitionClass(className, wrapperSelector) {
+      const element = document.querySelector(`.${className}`);
+      const transitionClass = `${className}-transition`;
+      element.classList.remove(transitionClass);
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            element.classList.add(transitionClass);
+            return;
+          }
+
+          element.classList.remove(transitionClass);
+        });
+      });
+
+      observer.observe(document.querySelector(wrapperSelector));
+    }
+
+    // addTransitionClass('presentation', '.main')
+    // addTransitionClass('thumb', '.main')
   </script>
 </body>
 
