@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafael Bernardo - Portfolio</title>
 
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./images/favicon/site.webmanifest">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@300;500&display=swap"
@@ -166,7 +171,7 @@
         <h4 class="high-text section-title">Contato</h4>
 
         <div class="container__form">
-          <form class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
+          <form onsubmit="window.submitted=true;" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
             <div class="fieldset">
               <label for="entry.864902802">Nome:</label>
               <input autocomplete="name" type="text" required name="entry.864902802" id="entry.864902802">
@@ -203,15 +208,21 @@
           </div>
         </div>
 
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(window.submitted) {showSuccessPage()}"></iframe>
       </section>
     </main>
   </div>
 
-  <script onload="initFeather()" src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" async defer></script>
   <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js" async defer></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+
   <script>
+    window.submitted = false
+    window.onload = () => {
+      initFeather()
+    }
+
     function initFeather() {
       window.feather && feather.replace()
     }
@@ -231,7 +242,6 @@
         }
       })
     })
-
   </script>
 </body>
 

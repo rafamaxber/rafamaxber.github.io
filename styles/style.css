@@ -156,9 +156,10 @@ img {
   padding: 1rem;
 }
 
-.navigation li a:hover {
-  color: var(--highlight-color);
-  font-weight: 400;
+.navigation li a:hover,
+.navigation li a:active {
+  background-color: var(--highlight-color);
+  font-weight: 600;
 }
 
 .navigation li a:active {
@@ -372,6 +373,11 @@ img {
   font-weight: 800;
   text-transform: uppercase;
   cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+}
+
+.btn:active {
+  transform: scale(.9);
 }
 
 @media (min-width: 768px) {
