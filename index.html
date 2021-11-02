@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Rafael Bernardo - Portfolio</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
@@ -17,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@300;500&display=swap"
     rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
 
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/style-desktop.css">
@@ -171,7 +172,7 @@
         <h4 class="high-text section-title">Contato</h4>
 
         <div class="container__form">
-          <form onsubmit="window.submitted=true;" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
+          <form onsubmit="submitForm();" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
             <div class="fieldset">
               <label for="entry.864902802">Nome:</label>
               <input autocomplete="name" type="text" required name="entry.864902802" id="entry.864902802">
@@ -198,17 +199,27 @@
               <textarea name="entry.1542882848" id="entry.1542882848" cols="30" rows="10"></textarea>
             </div>
 
-            <button type="submit" class="btn">Enviar</button>
+            <button type="submit" class="btn">
+              <span>Enviar</span>
+              <i data-feather="loader"></i>
+            </button>
 
             <input type="hidden" name="usp" id="usp" value="pp_url">
           </form>
+
+          <div class="container__success__page">
+            <i data-feather="check-circle"></i>
+
+            <h5>Mensagem enviada com sucesso!</h5>
+            <p>Em breve entrarei em contato.</p>
+          </div>
 
           <div class="form_img">
             <img loading="lazy" src="./images/undraw_My_notifications_re_ehmk.svg" alt="Enviar mensagem" />
           </div>
         </div>
 
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(window.submitted) {showSuccessPage()}"></iframe>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="showSuccessPage()"></iframe>
       </section>
     </main>
   </div>
@@ -218,13 +229,22 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   <script>
-    window.submitted = false
     window.onload = () => {
       initFeather()
     }
 
     function initFeather() {
       window.feather && feather.replace()
+    }
+
+    function showSuccessPage() {
+      document.querySelector('.container__form').classList.add('success__active')
+      document.querySelector('.container__form').classList.remove('loader__active')
+    }
+
+    function submitForm() {
+      document.querySelector('.container__form').classList.add('loader__active')
+      document.querySelector('.container__form .btn').setAttribute('type', 'button')
     }
 
     document.querySelectorAll('.icon__menu').forEach((el) => {

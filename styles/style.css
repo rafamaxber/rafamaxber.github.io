@@ -407,3 +407,58 @@ img {
     display: block;
   }
 }
+
+.container__form.loader__active .btn span,
+.container__form.success__active .form,
+.container__success__page,
+.container__form .btn svg {
+  display: none;
+}
+
+.container__form .btn span {
+  display: block;
+}
+
+.container__form.loader__active .btn svg {
+  display: inline;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+.container__form.success__active .container__success__page {
+  display: block;
+}
+
+.container__success__page {
+  width: 80%;
+  text-align: center;
+  background-color: #fff;
+  padding: 10% 0;
+  border: 8px solid #41fc96;
+  border-radius: 50%;
+}
+
+.container__success__page svg {
+  width: 60px;
+  height: 60px;
+  color: #41fc96;
+}
+
+.container__success__page h5 {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+
+.container__success__page p {
+  font-size: .9rem;
+  margin: 1rem;
+}
+
+@keyframes button-loading-spinner {
+  from {
+      transform: rotate(0turn);
+  }
+
+  to {
+      transform: rotate(1turn);
+  }
+}

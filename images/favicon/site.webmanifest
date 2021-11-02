@@ -1,7 +1,7 @@
 {
   "name": "Rafael Bernardo - Web Developer",
   "short_name": "rafabernardo.dev",
-  "start_url": "?app=true",
+  "start_url": "/index.html",
   "icons": [{
     "src": "./android-chrome-192x192.png",
     "sizes": "192x192",
