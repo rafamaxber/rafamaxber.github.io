@@ -16,20 +16,20 @@
 
   <title>Rafael Bernardo - Portfolio</title>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./images/favicon/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" crossorigin="use-credentials">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png" crossorigin="use-credentials">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png" crossorigin="use-credentials">
+  <link rel="manifest" href="./images/favicon/site.webmanifest" crossorigin="use-credentials">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@300;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/style-desktop.css">
+  <link rel="stylesheet" href="./styles/style.css" crossorigin="use-credentials">
+  <link rel="stylesheet" href="./styles/style-desktop.css" crossorigin="use-credentials">
 </head>
 
 <body>
@@ -185,7 +185,7 @@
         <h4 class="high-text section-title">Contato</h4>
 
         <div class="container__form">
-          <form onsubmit="submitForm(event);" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
+          <form style="display: none;" onsubmit="submitForm(event);" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
             <div class="fieldset">
               <label for="entry.864902802">Nome:</label>
               <input autocomplete="name" type="text" required name="entry.864902802" id="entry.864902802">
@@ -225,16 +225,27 @@
             <input type="hidden" name="usp" id="usp" value="pp_url">
           </form>
 
-          <div class="container__success__page">
+          <div class="container__success__page" style="display: none;">
             <i data-feather="check-circle"></i>
 
             <h5>Mensagem enviada com sucesso!</h5>
             <p>Em breve entrarei em contato.</p>
           </div>
 
-          <div class="form_img">
-            <img loading="lazy" src="./images/undraw_My_notifications_re_ehmk.svg" alt="Enviar mensagem" />
+          <div class="container_social">
+
+            <a href="https://github.com/rafamaxber" class="btn-social" referrerpolicy="no-referrer" target="_blank">
+              <img src="./images/github.png" loading="lazy" alt="Github">
+              <span>Github</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/rafamaxber/" class="btn-social" referrerpolicy="no-referrer" target="_blank">
+              <img src="./images/linkedin.png" loading="lazy" alt="Linkedin">
+              <span>Linkedin</span>
+            </a>
+
           </div>
+
         </div>
 
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="typeof showSuccessPage !== 'undefined' && showSuccessPage()"></iframe>
@@ -242,9 +253,9 @@
     </main>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" async defer></script>
-  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js" async defer></script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous" async defer></script>
+  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js" crossorigin="anonymous" async defer></script>
+  <script async defer src="https://buttons.github.io/buttons.js" crossorigin="anonymous"></script>
 
   <script>
     window.onload = () => {

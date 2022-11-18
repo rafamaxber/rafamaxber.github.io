@@ -351,12 +351,11 @@ img {
 .container__form {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 2rem 0;
 }
 
 .form_img {
-  width: 80%;
+  width: 50%;
   text-align: right;
   display: none;
 }
@@ -466,4 +465,27 @@ img {
   to {
       transform: rotate(1turn);
   }
+}
+
+.btn-social {
+  width: 250px;
+  height: 70px;
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #42fc96;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: #282828;
+}
+
+.btn-social img {
+  height: 90%;
+  display: inline-block;
+  position: absolute;
+  left: 2%;
+  top: 4%;
 }
