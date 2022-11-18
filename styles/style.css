@@ -40,6 +40,11 @@ img {
   display: none;
 }
 
+.fieldset-age {
+  position: absolute;
+  left: -99999px;
+}
+
 .menu__active .icon__close_menu {
   display: block;
 }

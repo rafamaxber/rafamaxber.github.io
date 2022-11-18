@@ -172,10 +172,15 @@
         <h4 class="high-text section-title">Contato</h4>
 
         <div class="container__form">
-          <form onsubmit="submitForm();" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
+          <form onsubmit="submitForm(event);" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
             <div class="fieldset">
               <label for="entry.864902802">Nome:</label>
               <input autocomplete="name" type="text" required name="entry.864902802" id="entry.864902802">
+            </div>
+
+            <div class="fieldset fieldset-age">
+              <label for="entry.864902802">Idade:</label>
+              <input autocomplete="age" type="text" name="entry.864902802003" id="entry.864902802003">
             </div>
 
             <div class="fieldset">
@@ -219,7 +224,7 @@
           </div>
         </div>
 
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="showSuccessPage()"></iframe>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="typeof showSuccessPage !== 'undefined' && showSuccessPage()"></iframe>
       </section>
     </main>
   </div>
@@ -242,7 +247,12 @@
       document.querySelector('.container__form').classList.remove('loader__active')
     }
 
-    function submitForm() {
+    function submitForm(event) {
+      if (event.target['entry.864902802003'].value) {
+        event.preventDefault();
+        return;
+      }
+
       document.querySelector('.container__form').classList.add('loader__active')
       document.querySelector('.container__form .btn').setAttribute('type', 'button')
     }
