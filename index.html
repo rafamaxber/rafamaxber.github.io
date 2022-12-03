@@ -185,52 +185,6 @@
         <h4 class="high-text section-title">Contato</h4>
 
         <div class="container__form">
-          <form style="display: none;" onsubmit="submitForm(event);" class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSe910dB0KwQcTnSUk5VliOCo5dZlMyuCJuNXg_yx4fBFT4bbg/formResponse" target="hidden_iframe">
-            <div class="fieldset">
-              <label for="entry.864902802">Nome:</label>
-              <input autocomplete="name" type="text" required name="entry.864902802" id="entry.864902802">
-            </div>
-
-            <div class="fieldset fieldset-age">
-              <label for="entry.864902802">Idade:</label>
-              <input autocomplete="age" type="text" name="entry.864902802003" id="entry.864902802003">
-            </div>
-
-            <div class="fieldset">
-              <label for="entry.436600745">Email:</label>
-              <input autocomplete="email" type="email" required name="entry.436600745" id="entry.436600745">
-            </div>
-
-            <div class="fieldset">
-              <label for="entry.1588077306">Serviço:</label>
-              <select name="entry.1588077306" id="entry.1588077306">
-                <option value="Criação de site institucional">Criação de site institucional</option>
-                <option value="Aplicativos">Aplicativos</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Criação de logo">Criação de logo</option>
-                <option value="Consultoria">Consultoria</option>
-              </select>
-            </div>
-
-            <div class="fieldset">
-              <label for="entry.1542882848">Descrição:</label>
-              <textarea name="entry.1542882848" id="entry.1542882848" cols="30" rows="10"></textarea>
-            </div>
-
-            <button type="submit" class="btn">
-              <span>Enviar</span>
-              <i data-feather="loader"></i>
-            </button>
-
-            <input type="hidden" name="usp" id="usp" value="pp_url">
-          </form>
-
-          <div class="container__success__page" style="display: none;">
-            <i data-feather="check-circle"></i>
-
-            <h5>Mensagem enviada com sucesso!</h5>
-            <p>Em breve entrarei em contato.</p>
-          </div>
 
           <div class="container_social">
 
@@ -248,7 +202,6 @@
 
         </div>
 
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="typeof showSuccessPage !== 'undefined' && showSuccessPage()"></iframe>
       </section>
     </main>
   </div>
@@ -264,21 +217,6 @@
 
     function initFeather() {
       window.feather && feather.replace()
-    }
-
-    function showSuccessPage() {
-      document.querySelector('.container__form').classList.add('success__active')
-      document.querySelector('.container__form').classList.remove('loader__active')
-    }
-
-    function submitForm(event) {
-      if (event.target['entry.864902802003'].value) {
-        event.preventDefault();
-        return;
-      }
-
-      document.querySelector('.container__form').classList.add('loader__active')
-      document.querySelector('.container__form .btn').setAttribute('type', 'button')
     }
 
     document.querySelectorAll('.icon__menu').forEach((el) => {
